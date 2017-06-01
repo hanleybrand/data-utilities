@@ -11,10 +11,18 @@ tools:
             standard: "PSR2"
 
 build:
+    environment:
+        php: "5.6"
+        mysql: false
+        postgresql: false
+        mongodb: false
+        redis: false
+        neo4j: false
+        rabbitmq: false
     tests:
         override:
             -
-                command: 'phpunit --coverage-clover=coverage.clover'
+                command: 'vendor/bin/phpunit --coverage-clover=/tmp/coverage.xml'
                 coverage:
-                    file: 'coverage.clover'
+                    file: '/tmp/coverage.xml'
                     format: 'clover'
