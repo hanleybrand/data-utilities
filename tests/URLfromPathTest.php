@@ -26,7 +26,7 @@ class URLfromPathTests extends TestCase
         );
 
         $this->assertEquals(
-            'https://data-utilities.phpunit.de/battis/data-utilities/tests/URLfromPathTest.php',
+            'https://data-utilities.phpunit.de/' . basename(dirname(dirname(__DIR__))) . '/' . basename(dirname(__DIR__)) . '/tests/URLfromPathTest.php',
             DataUtilities::URLfromPath($path, $server)
         );
     }
@@ -42,7 +42,7 @@ class URLfromPathTests extends TestCase
         );
 
         $this->assertEquals(
-            'https://data-utilities.phpunit.de/~foo/battis/data-utilities/tests/URLfromPathTest.php',
+            'https://data-utilities.phpunit.de/~foo/' . basename(dirname(dirname(__DIR__))) . '/' . basename(dirname(__DIR__)) . '/tests/URLfromPathTest.php',
             DataUtilities::URLfromPath($path, $server)
         );
     }
@@ -59,7 +59,7 @@ class URLfromPathTests extends TestCase
         $basePath = dirname(__DIR__) . '/src/';
 
         $this->assertEquals(
-            'https://data-utilities.phpunit.de/battis/data-utilities/tests/URLfromPathTest.php',
+            'https://data-utilities.phpunit.de/' . basename(dirname(dirname(__DIR__))) . '/' . basename(dirname(__DIR__)) . '/tests/URLfromPathTest.php',
             DataUtilities::URLfromPath($path, $server, $basePath)
         );
     }
